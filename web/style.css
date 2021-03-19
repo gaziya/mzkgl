@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#wrap {
+    width: 100%;
+    min-height: 480px;
+    max-height: 480px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+#wrap.invisible {
+    display: none;
+}
+
+#interface {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#menu {
+    background: rgb(17, 17, 17);
+    color: whitesmoke;
+    min-width: 220px;
+    max-width: 220px;
+    font-size: 14px;
+    height: 100%;
+    padding: 10px 10px 10px 10px;
+}
+
+#counter {
+    display: inline-block;
+}
+.counter {
+    border-right: 1px solid black;
+    color: orange;
+    font-size: 16px;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+    height: 32px;
+    margin: -1px 0px 0px 0px;
+    padding: 0px 5px 0px 0px;
+    overflow: hidden;
+    user-select: none;
+}
+.counterchars {
+    font-size: 12px;
+    display: inline-block;
+}
+.message {
+    padding: 0px 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.lineout {
+    background-color: #111111;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: #1DA1F2;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0px 10px;
+    width: calc(100% - 1px);
+    display: flex;
+    min-height: 32px;
+    max-height: 32px;
+    overflow: hidden;
+}
+
+.time
+{
+  color: #f95959;
+  float: left;
+}
+
+#editor{
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  border: solid #8C8B8B;
+}
+
+dialog{
+    margin : 5px ;
+    padding : 10px ;
+    border : 3px solid maroon ;
+    background: lightgreen ;
+    width: 250px;
+    height: 100px;
+    position:absolute;
+    top: 150px;
+    left:1000px;
+ }
+ 
+canvas{
+  float: right;
+  position: relative;
+  height 30px;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+}

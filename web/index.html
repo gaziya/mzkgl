@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>mzkgl -sound editor-</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="interface">
+            <div id="lineout" class="lineout">
+                <div class="counter">
+                    <div class="counterchars">time</div>
+                    <div id="counter">00:00.0</div>
+                </div>
+                <div id="message" class="message">Stop -- Auto Compile --</div>
+            </div>
+            <pre id="editor"></pre>
+        </div>
+        <div id="menu">
+            <dialog id="badName">
+                <br>
+                <div>Bad Name!</div>
+                <div>
+                    <button id="close" onclick="this.parentNode.parentNode.close()">OK</button>
+                </div>
+            </dialog>
+            <br>
+            <dev>Shader</dev><br>
+            <select id="shaderList"></select>
+            <br>
+            <dialog id="shaderRename">
+                <div>Input change name</div>
+                <div>
+                   <input type="text" id="inputShaderRename" value="">
+                </div>
+                <div>
+                    <button onclick="this.parentNode.parentNode.close(inputShaderRename.value);inputShaderRename.value='';">OK</button>
+                    <button onclick="this.parentNode.parentNode.close()">Cancel</button>
+                </div>
+            </dialog>
+            <button id="btn_shaderRename" onclick="shaderRename.showModal();inputShaderRename.value=shaderList.value">Rename</button>
+            <button id="shaderNew">New</button>
+            <button id="shaderFork">Fork</button>
+            <dialog id="shaderDel">
+                <br>
+                <div>Delete?</div>
+                <div>
+                    <button onclick="this.parentNode.parentNode.close(1);">OK</button>
+                    <button onclick="this.parentNode.parentNode.close(0)">Cancel</button>
+                </div>
+            </dialog>
+            <button id="btn_shaderDel" onclick="shaderDel.showModal();">Del</button>
+            <br>
+            <div>Category</div>
+            <select id="categoryList"></select>
+            <br>
+            <dialog id="categoryNew">
+                <div>input new name</div>
+                <div>
+                    <input type="text" id="inputCategoryNew" value="" placeholder="New Category">
+                </div>
+                <div>
+                    <button onclick="this.parentNode.parentNode.close(inputCategoryNew.value);inputCategoryNew.value='';">OK</button>
+                    <button onclick="this.parentNode.parentNode.close()">Cancel</button>
+                </div>
+            </dialog>
+            <button id="btn_categoryNew" onclick="categoryNew.showModal()">New</button>
+
+            <dialog id="categoryRename">
+                <div>input Change name</div>
+                <div>
+                    <input type="text" id="inputCategoryRename" value="">
+                </div>
+                <div>
+                    <button onclick="this.parentNode.parentNode.close(inputCategoryRename.value);inputCategoryRename.value='';">OK</button>
+                    <button onclick="this.parentNode.parentNode.close()">Cancel</button>
+                </div>
+            </dialog>
+            <button id="btn_categoryRename" onclick="categoryRename.showModal();inputCategoryRename.value=categoryList.value">Rename</button>
+            <br>
+            <dev>ShiftCategory</dev>
+            <br>
+            <select id="shiftList"></select>
+            <br>
+            <br>
+            <canvas id="canvas"></canvas>
+            <dev>Second interval</dev>
+            <div style="display:inline-flex">
+                <div>start:</div>
+                <input type="number"  style="width:50px;" name="start" id="start" value="0"/>
+                <dev>end:</dev>
+                <input type="number"  style="width:50px;" name="end" id="end" value="180"/>
+            </div>
+            <br>
+            <br>
+            <dev>Control</dev>
+            <br>
+            <div style="display:inline-flex">
+                <button id="btnSw" accesskey="m">PLAY</button><div>&nbsp;</div>
+                <button id="reset" accesskey="r">TimeReset</button>&nbsp;&nbsp;&nbsp;<div></div>
+                <button id="download">Download</button>
+            </div>
+            <br>
+            <br>
+            <div id="char">chars</div>
+        </div>
+    </div>&nbsp;&nbsp;&nbsp;
+    <!-- partial -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/ace/1.2.6/noconflict/ace.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script  src="./script.js"></script>
+</body>
+</html>
