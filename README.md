@@ -17,6 +17,6 @@ pip install pyopengl
 pip install pyaudio  
 これをインストールすれば動きます。
 
-###起動
+### 起動
 python main.py
 
