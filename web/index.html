@@ -55,6 +55,17 @@
             <div>Category</div>
             <select id="categoryList"></select>
             <br>
+            <dialog id="categoryRename">
+                <div>input Change name</div>
+                <div>
+                    <input type="text" id="inputCategoryRename" value="">
+                </div>
+                <div>
+                    <button onclick="this.parentNode.parentNode.close(inputCategoryRename.value);inputCategoryRename.value='';">OK</button>
+                    <button onclick="this.parentNode.parentNode.close()">Cancel</button>
+                </div>
+            </dialog>
+            <button id="btn_categoryRename" onclick="categoryRename.showModal();inputCategoryRename.value=categoryList.value">Rename</button>
             <dialog id="categoryNew">
                 <div>input new name</div>
                 <div>
@@ -67,17 +78,6 @@
             </dialog>
             <button id="btn_categoryNew" onclick="categoryNew.showModal()">New</button>
 
-            <dialog id="categoryRename">
-                <div>input Change name</div>
-                <div>
-                    <input type="text" id="inputCategoryRename" value="">
-                </div>
-                <div>
-                    <button onclick="this.parentNode.parentNode.close(inputCategoryRename.value);inputCategoryRename.value='';">OK</button>
-                    <button onclick="this.parentNode.parentNode.close()">Cancel</button>
-                </div>
-            </dialog>
-            <button id="btn_categoryRename" onclick="categoryRename.showModal();inputCategoryRename.value=categoryList.value">Rename</button>
             <br>
             <dev>ShiftCategory</dev>
             <br>
