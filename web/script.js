@@ -115,8 +115,13 @@ categoryList.onchange = async function(e){
 };
 
 shaderList.onchange = async function(e){
-    const src = await eel.loadShader(categoryList.value,shaderList.value)();
+    name = shaderList.value;
+    const src = await eel.loadShader(categoryList.value, name)();
     setText(src);
+    let a = await eel.listShaders(categoryList.value)();
+    a = a.split(",");
+    reList(shaderList, a, "");
+    shaderList.selectedIndex = a.indexOf(name);
 };
 
 shiftList.onchange = async function(e){
@@ -289,7 +294,6 @@ gl.vertexAttribPointer(0, 1,gl.FLOAT, false, 0, 0);
 
 eel.expose(data);
 function data(d){
-    //console.log(d.length)
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(d), gl.DYNAMIC_COPY);
 };
 
