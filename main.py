@@ -189,9 +189,7 @@ void main() {
             glEndTransformFeedback()
             glDisable(GL_RASTERIZER_DISCARD)
             glGetBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(self.samples), byref(self.samples))
-        data = numpy.frombuffer(self.samples, dtype=numpy.float32)
-        return data
-        #return array.array('f', data).tobytes()
+        return numpy.frombuffer(self.samples, dtype=numpy.float32)
 
     def compile(self, src):
         shader = glCreateShader(GL_VERTEX_SHADER)
